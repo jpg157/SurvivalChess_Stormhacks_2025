@@ -5,4 +5,9 @@ A game that combines move-based chess rules with aspects from time based 2D surv
 * Stormhacks 2025 Winner
 * Stormhacks 2025 Best Game
 
-Made in collaboration with Vincent Fung, Richard Ho, and Mansib T.
+## Team
+*   [Mansib Talukder](https://github.com/MansibTR)
+*   [Jason Lau](https://github.com/jpg157)
+*   [Richard Ho](https://github.com/rchrdho)
+*   [Vincent Fung](https://github.com/sireoh)
+  
