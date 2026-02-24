@@ -6,7 +6,7 @@ import { GameController } from './game/controllers/gameController';
 import { BoardView } from './game/ui/boardView';
 import { GameUI } from './game/ui/gameUI';
 import { GameBoard } from './game/game_board/gameBoard';
-import { assetManifest } from '../assetManifest'
+import { assetManifest } from './assetManifest';
 
 async function start(): Promise<void> {
   const app = await createApp();
