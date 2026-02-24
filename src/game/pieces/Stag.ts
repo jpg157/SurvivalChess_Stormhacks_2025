@@ -1,4 +1,4 @@
-import { Piece } from './Piece';
+import { Piece } from './piece';
 
 /**
  * The Stag class represents a chess-like piece in the SurviChess game.
@@ -18,7 +18,7 @@ export class Stag extends Piece {
      * The Stag moves horizontally or vertically, skipping the adjacent square,
      * and must land on an empty square.
      */
-    public isValidMove(newRow: number, newCol: number, board: Piece[][]): boolean {
+    public override isValidMove(newRow: number, newCol: number, board: Piece[][]): boolean {
         // Check bounds
         if (!this.isWithinBounds(newRow, newCol, board)) {
             return false;
@@ -58,7 +58,7 @@ export class Stag extends Piece {
     /**
      * Returns the type of the piece as a single-character string.
      */
-    public getType(): string {
+    public override getType(): string {
         return "S"; // Short name for Stag
     }
 }

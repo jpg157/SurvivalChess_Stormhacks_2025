@@ -1,11 +1,11 @@
 import { Container, Text, TextStyle } from 'pixi.js';
 import { createApp, centerStage } from './game/ui/app';
 import { loadPieceTextures } from './game/ui/assets';
-import { GameBoard } from './game/game_board/GameBoard';
-import { GameController } from './game/controllers/GameController';
-import { BoardView } from './game/ui/BoardView';
-import { GameUI } from './game/ui/GameUI';
 import { TILE } from './game/config';
+import { GameController } from './game/controllers/gameController';
+import { BoardView } from './game/ui/boardView';
+import { GameUI } from './game/ui/gameUI';
+import { GameBoard } from './game/game_board/gameBoard';
 
 async function start(): Promise<void> {
   const app = await createApp();
@@ -67,23 +67,23 @@ async function start(): Promise<void> {
   howToPlayTitle.x = 0;
   howToPlayTitle.y = boardSize + 40;
 
-  const instructions = new Text(`🎯 OBJECTIVE:
+  const instructions = new Text(`OBJECTIVE:
 Save targeted pieces (red tinted) from danger zones (flashing red tiles) by 
 maneuvering the pieces using the empty square before time runs out!
 
-🎮 CONTROLS:
+CONTROLS:
 • Click a piece to select it (yellow highlight)
 • Green dots show valid moves
 • Click a green dot to move the piece
 • Hover over tiles for blue outline
 
-⚡ GAMEPLAY:
+GAMEPLAY:
 • Each wave targets 2-4 random pieces
 • Move ALL targeted pieces off danger tiles to survive
 • You have 3 lives (hearts) - lose one each time you fail
 • Wave times: 2 targets = 25s, 3 targets = 35s, 4 targets = 45s
 
-♟️ PIECE MOVEMENTS:
+PIECE MOVEMENTS:
 • Queen (Q): Any adjacent empty tile
 • Rook (R): Adjacent Horizontal/vertical empty tile
 • Bishop (B): Adjacent Diagonal empty tile  
@@ -91,7 +91,7 @@ maneuvering the pieces using the empty square before time runs out!
 • Trident (T): Diagonally jumping over pieces to empty tile 
 • Stag (S): Horizontal/vertical jumping over pieces to empty tile
 
-💡 STRATEGY TIPS:
+STRATEGY TIPS:
 • Plan multiple moves ahead
 • Use the restart button anytime to try again
 • Remember: pieces can't move onto occupied squares

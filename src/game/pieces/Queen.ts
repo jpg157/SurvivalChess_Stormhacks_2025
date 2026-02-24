@@ -1,4 +1,4 @@
-import { Piece } from './Piece';
+import { Piece } from './piece';
 
 /**
  * The Queen class represents a chess-like piece in the SurviChess game.
@@ -17,7 +17,7 @@ export class Queen extends Piece {
      * Determines whether a move to the specified position is valid for the Queen.
      * The Queen can move exactly one step in any direction: horizontally, vertically, or diagonally.
      */
-    public isValidMove(newRow: number, newCol: number, board: Piece[][]): boolean {
+    public override isValidMove(newRow: number, newCol: number, board: Piece[][]): boolean {
         // Check bounds
         if (!this.isWithinBounds(newRow, newCol, board)) {
             return false;
@@ -42,7 +42,7 @@ export class Queen extends Piece {
     /**
      * Returns the type of the Queen as a single-character string.
      */
-    public getType(): string {
+    public override getType(): string {
         return "Q";
     }
 }

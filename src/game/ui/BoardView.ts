@@ -1,6 +1,6 @@
 import { Container, Graphics, Sprite, Texture } from 'pixi.js';
 import { BOARD_SIZE, TILE, PIECE_SCALE } from '../config';
-import { GameController } from '../controllers/GameController';
+import { GameController } from '../controllers/gameController';
 
 export class BoardView {
   public root = new Container();
@@ -224,7 +224,7 @@ export class BoardView {
         if (board[r][c] !== null) continue;
 
         // Check if this is a valid move
-        const boardAsPieces = board as unknown as import('../pieces/Piece').Piece[][];
+        const boardAsPieces = board as unknown as import('../pieces/piece').Piece[][];
         if (selectedPiece.isValidMove(r, c, boardAsPieces)) {
           // Create a valid move indicator
           const moveIndicator = new Graphics();

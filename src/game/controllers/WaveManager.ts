@@ -1,5 +1,6 @@
-import { Piece } from '../pieces/Piece';
-import { GameBoard } from '../game_board/GameBoard';
+import { GameBoard } from "../game_board/gameBoard";
+import { Piece } from "../pieces/piece";
+
 
 export interface TargetedPiece {
   row: number;

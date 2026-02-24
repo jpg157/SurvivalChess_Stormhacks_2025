@@ -1,4 +1,4 @@
-import { Piece } from './Piece';
+import { Piece } from './piece';
 
 /**
  * The Knight class represents a chess-like piece in the SurviChess game.
@@ -18,7 +18,7 @@ export class Knight extends Piece {
      * The Knight moves in an "L" shape (two squares in one direction and one square in another),
      * and must land on an empty square.
      */
-    public isValidMove(newRow: number, newCol: number, board: Piece[][]): boolean {
+    public override isValidMove(newRow: number, newCol: number, board: Piece[][]): boolean {
         // Check bounds
         if (!this.isWithinBounds(newRow, newCol, board)) {
             return false;
@@ -42,7 +42,7 @@ export class Knight extends Piece {
     /**
      * Returns the type of the piece as a single-character string.
      */
-    public getType(): string {
+    public override getType(): string {
         return "N"; // Short name for Knight
     }
 }

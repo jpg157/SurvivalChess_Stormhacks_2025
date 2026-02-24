@@ -1,4 +1,4 @@
-import { BoardManager, BOARD_SIZE, type Board } from './BoardManager';
+import { BoardManager, BOARD_SIZE, type Board } from './boardManager';
 
 export class GameBoard {
   private manager: BoardManager;

@@ -1,7 +1,7 @@
-// Ensure the path is correct and the file exists
-import { Piece } from '../pieces/Piece';
-import { GameBoard } from '../game_board/GameBoard';
-import { WaveManager } from './WaveManager';
+import { GameBoard } from "../game_board/gameBoard";
+import { WaveManager } from "./waveManager";
+import { Piece } from "../pieces/piece";
+
 
 export class GameController {
   private game: GameBoard;

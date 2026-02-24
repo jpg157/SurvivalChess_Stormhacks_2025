@@ -1,4 +1,4 @@
-import { Piece } from "./Piece";
+import { Piece } from './piece';
 
 /**
  * The Trident class represents a unique type of chess-like piece in the SurviChess game.
@@ -16,7 +16,7 @@ export class Trident extends Piece {
      * The Trident can only move diagonally but must skip at least one square.
      * The destination square must also be empty.
      */
-    public isValidMove(newRow: number, newCol: number, board: Piece[][]): boolean {
+    public override isValidMove(newRow: number, newCol: number, board: Piece[][]): boolean {
         // Check bounds
         if (!this.isWithinBounds(newRow, newCol, board)) {
             return false;
@@ -50,7 +50,7 @@ export class Trident extends Piece {
     /**
      * Returns the type of the piece as a single-character string.
      */
-    public getType(): string {
+    public override getType(): string {
         return "T"; // Short name for Trident
     }
 }

@@ -1,4 +1,4 @@
-import { Piece } from './Piece';
+import { Piece } from "./piece";
 
 /**
  * The Bishop class represents a chess-like piece in the SurviChess game.
@@ -15,7 +15,7 @@ export class Bishop extends Piece {
      * Determines whether the Bishop's move to the specified row and column is valid.
      * The Bishop can move exactly one step diagonally to an empty square.
      */
-    public isValidMove(newRow: number, newCol: number, board: Piece[][]): boolean {
+    public override isValidMove(newRow: number, newCol: number, board: Piece[][]): boolean {
         // Check bounds
         if (!this.isWithinBounds(newRow, newCol, board)) {
             return false;
@@ -39,7 +39,7 @@ export class Bishop extends Piece {
     /**
      * Returns the type of the piece as a single-character string.
      */
-    public getType(): string {
+    public override getType(): string {
         return "B";
     }
 }
