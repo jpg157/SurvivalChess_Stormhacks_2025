@@ -1,7 +1,7 @@
 import { Container, Graphics, Sprite, Texture } from 'pixi.js';
 import { BOARD_SIZE, TILE, PIECE_SCALE } from '../config';
 import { GameController } from '../controllers/gameController';
-import { PieceAlias } from '../../../assetManifest';
+import { PieceAlias } from '../../assetManifest';
 
 export class BoardView {
   public root = new Container();
