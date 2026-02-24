@@ -1,6 +1,7 @@
 import { Container, Graphics, Sprite, Texture } from 'pixi.js';
 import { BOARD_SIZE, TILE, PIECE_SCALE } from '../config';
 import { GameController } from '../controllers/gameController';
+import { PieceAlias } from '../../../assetManifest';
 
 export class BoardView {
   public root = new Container();
@@ -15,7 +16,7 @@ export class BoardView {
 
   constructor(
     private controller: GameController,
-    private textures: Map<string, Texture>
+    private pieceTexturesBundle: Record<PieceAlias, Texture>
   ) {
     this.root.addChild(this.tilesLayer, this.highlightLayer, this.piecesLayer, this.effectsLayer);
   }
@@ -76,10 +77,11 @@ export class BoardView {
         const piece = board[r][c];
         if (!piece) continue;
 
-        const tex = this.textures.get(piece.getType());
-        if (!tex) continue;
+        const pieceTexture = this.pieceTexturesBundle[piece.getType()];
 
-        const sp = new Sprite(tex);
+        if (!pieceTexture) continue;
+
+        const sp = new Sprite(pieceTexture);
         sp.anchor.set(0.5);
         sp.scale.set(PIECE_SCALE);
         sp.x = c * TILE + TILE / 2;

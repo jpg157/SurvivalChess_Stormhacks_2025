@@ -1,11 +1,12 @@
-import { Container, Text, TextStyle } from 'pixi.js';
+import { Assets, Container, Text, TextStyle } from 'pixi.js';
 import { createApp, centerStage } from './game/ui/app';
-import { loadPieceTextures } from './game/ui/assets';
+// import { loadPieceTextures } from './game/ui/assets';
 import { TILE } from './game/config';
 import { GameController } from './game/controllers/gameController';
 import { BoardView } from './game/ui/boardView';
 import { GameUI } from './game/ui/gameUI';
 import { GameBoard } from './game/game_board/gameBoard';
+import { assetManifest } from '../assetManifest'
 
 async function start(): Promise<void> {
   const app = await createApp();
@@ -14,7 +15,12 @@ async function start(): Promise<void> {
   app.stage.addChild(root);
   centerStage(app, root);
 
-  const textures = await loadPieceTextures();
+  await Assets.init({ manifest: assetManifest });
+
+  // load pieceTextures bundle in assetManifest.ts
+  const pieceTexturesBundle = await Assets.loadBundle('pieceTextures');
+
+  // const textures = await loadPieceTextures();
 
   // Create game title
   const gameTitle = new Text('SURVIVAL CHESS', new TextStyle({
@@ -44,7 +50,7 @@ async function start(): Promise<void> {
 
   const game = new GameBoard();
   const controller = new GameController(game);
-  const view = new BoardView(controller, textures);
+  const view = new BoardView(controller, pieceTexturesBundle);
   const gameUI = new GameUI();
 
   // Position the UI to the right of the board

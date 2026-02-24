@@ -1,3 +1,4 @@
+import { PieceAlias } from '../../../assetManifest';
 import { Piece } from './piece';
 
 /**
@@ -42,7 +43,7 @@ export class Queen extends Piece {
     /**
      * Returns the type of the Queen as a single-character string.
      */
-    public override getType(): string {
+    public override getType(): PieceAlias {
         return "Q";
     }
 }

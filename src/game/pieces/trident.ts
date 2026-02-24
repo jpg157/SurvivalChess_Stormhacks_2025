@@ -1,3 +1,4 @@
+import { PieceAlias } from '../../../assetManifest';
 import { Piece } from './piece';
 
 /**
@@ -50,7 +51,7 @@ export class Trident extends Piece {
     /**
      * Returns the type of the piece as a single-character string.
      */
-    public override getType(): string {
+    public override getType(): PieceAlias {
         return "T"; // Short name for Trident
     }
 }

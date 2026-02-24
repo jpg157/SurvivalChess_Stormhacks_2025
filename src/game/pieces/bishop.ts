@@ -1,3 +1,4 @@
+import { PieceAlias as PieceAlias } from "../../../assetManifest";
 import { Piece } from "./piece";
 
 /**
@@ -39,7 +40,7 @@ export class Bishop extends Piece {
     /**
      * Returns the type of the piece as a single-character string.
      */
-    public override getType(): string {
+    public override getType(): PieceAlias {
         return "B";
     }
 }

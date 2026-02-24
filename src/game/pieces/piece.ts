@@ -1,3 +1,5 @@
+import { PieceAlias } from "../../../assetManifest";
+
 const EVEN_DIVISOR = 2;
 
 /**
@@ -46,7 +48,7 @@ export abstract class Piece {
     /**
      * Unique identifier for the piece type (e.g., "Q", "R", "B", "N", "S", "T").
      */
-    public abstract getType(): string;
+    public abstract getType(): PieceAlias;
 
 
 }
