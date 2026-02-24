@@ -1,4 +1,4 @@
-import { PieceAlias } from '../../../assetManifest';
+import { PieceAlias } from '../../assetManifest';
 import { Piece } from './piece';
 
 /**

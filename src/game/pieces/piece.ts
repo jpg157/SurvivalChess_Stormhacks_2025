@@ -1,4 +1,4 @@
-import { PieceAlias } from "../../../assetManifest";
+import { PieceAlias } from "../../assetManifest";
 
 const EVEN_DIVISOR = 2;
 
